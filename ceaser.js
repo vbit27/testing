@@ -6,7 +6,11 @@ const ceaser = (text, key) => {
       if (x + key > 122) {
         return 96 + x + key - 122;
       } else return x + key;
-    }
+    } else if (x >= 65 && x <= 90) {
+      if (x + key > 90) {
+        return 65 + x + key - 90;
+      } else return x + key;
+    } else return x;
   });
 
   const newText = encrypted.map((x) => String.fromCharCode(x)).join('');
@@ -14,7 +18,7 @@ const ceaser = (text, key) => {
   console.log(newText);
 };
 
-ceaser('aaz', 1);
+ceaser('aAz', 1);
 
 /*
  
